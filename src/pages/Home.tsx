@@ -6,7 +6,7 @@ import type { TravelFormData } from "../models/travel";
 
 export default function Home() {
   const [packingList, setPackingList] = useState<string[]>([]);
-  const [loading, setLoading] = useState(false);
+  const [loading] = useState(false);
   const [destination, setDestination] = useState("");
 
 function handleTravelSubmit(data: TravelFormData) {
