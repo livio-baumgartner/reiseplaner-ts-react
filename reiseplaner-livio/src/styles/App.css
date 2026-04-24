@@ -1,0 +1,87 @@
+/* basic css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+}
+
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* form css*/
+form {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 450px;
+  margin: 0 auto;
+}
+
+fieldset {
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+legend {
+  font-weight: bold;
+  padding: 0 5px;
+}
+
+label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #333;
+}
+
+button {
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #333;
+}
