@@ -1,25 +1,31 @@
-import { useState } from 'react'
-import '../styles/App.css'
-import { InputForm } from '../components/InputForm'
-import type { TravelFormData } from '../models/travel';
+import { useState } from "react";
+import { InputForm } from "../components/InputForm";
+import { ResultList } from "../components/ResultList";
+import { generatePackingList } from "../utils/generatePackingList";
+import type { TravelFormData } from "../models/travel";
 
-function Home() {
+export default function Home() {
+  const [packingList, setPackingList] = useState<string[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [destination, setDestination] = useState("");
 
-  function handleTravelSubmit(data: TravelFormData) {
-    console.log(data);
-  }
-
-  return (
-    <>
-     <div className="container">
-  <h1>Reiseplaner</h1>
-
-  <div className="card">
-    <InputForm onSubmitTravel={handleTravelSubmit} />
-  </div>
-</div>
-    </>
-  )
+function handleTravelSubmit(data: TravelFormData) {
+  setDestination(data.destination);
+  const result = generatePackingList(data);
+  setPackingList(result);
 }
 
-export default Home
+  return (
+    <div className="container">
+      <h1>Reisegepäck-Planer</h1>
+
+      <div className="card">
+        <InputForm onSubmitTravel={handleTravelSubmit} />
+      </div>
+
+      <div className="card">
+        {loading ? <p>Packliste wird erstellt...</p> : <ResultList items={packingList} destination={destination} />}
+      </div>
+    </div>
+  );
+}

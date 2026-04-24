@@ -27,7 +27,8 @@ h1 {
   background: white;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  margin-bottom: 20px;
 }
 
 /* form css*/
@@ -84,4 +85,58 @@ button {
 
 button:hover {
   background: #333;
+}
+
+/* checkbox (packlist) css */
+.packing-list {
+  list-style: none;
+  margin-top: 15px;
+  padding: 0;
+
+  /* scroll */
+  max-height: 300px;
+  overflow-y: auto; 
+}
+
+.packing-list li {
+  margin-bottom: 10px;
+}
+
+.packing-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f9f9f9;
+  padding: 8px 10px;
+  border-radius: 6px;
+}
+
+.packing-item input {
+  width: auto;
+  cursor: pointer;
+}
+
+.packing-item:hover {
+  background: #eee;
+}
+
+.packing-item input {
+  width: auto;
+  margin: 0;         
+  transform: scale(1.1);
+}
+
+.packing-item:hover {
+  background: #eee;
+}
+
+.packing-item.checked {
+  background: #d4f8d4;
+  text-decoration: line-through;
+  color: #666;
+  transition: 0.3s;
+}
+
+.packing-item.checked:hover {
+    background: #98e098;
 }
