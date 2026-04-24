@@ -56,6 +56,7 @@ export function InputForm({ onSubmitTravel }: Props) {
               required
               type="text"
               name="destination"
+              minLength={1}
               maxLength={50}
               value={formData.destination}
               onChange={handleChange}
@@ -70,6 +71,7 @@ export function InputForm({ onSubmitTravel }: Props) {
               id="days"
               required
               min={1}
+              max={700}
               type="number"
               name="days"
               value={formData.days}
